@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { TestfyProvider, Experiment, Variation } from '../src';
 
@@ -16,8 +16,7 @@ beforeEach(() => {
   getVariationId.mockReset();
 });
 
-// @ts-ignore
-const setup = (children) => {
+const setup = (children: ReactNode) => {
   return render(
     <TestfyProvider>
       {children}

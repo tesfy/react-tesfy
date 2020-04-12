@@ -1,15 +1,15 @@
 import useTestfy from './useTestfy';
 
 interface Props {
-  featureId: string;
+  id: string;
   userId?: string;
   attributes?: Record<string, any>;
 }
 
-const useFeature = ({ featureId, userId, attributes }: Props) => {
+const useFeature = ({ id, userId, attributes }: Props) => {
   const { engine } = useTestfy();
 
-  return engine?.isFeatureEnabled(featureId, userId, attributes);
+  return engine?.isFeatureEnabled(id, userId, attributes);
 };
 
 export default useFeature;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { TestfyProvider, Feature } from '../src';
 
@@ -16,8 +16,7 @@ beforeEach(() => {
   isFeatureEnabled.mockReset();
 });
 
-// @ts-ignore
-const setup = (children) => {
+const setup = (children: ReactNode) => {
   return render(
     <TestfyProvider>
       {children}
@@ -33,7 +32,7 @@ describe('Experiment', () => {
     isFeatureEnabled.mockReturnValueOnce(true);
 
     const { getByTestId } = setup((
-      <Feature featureId={id} userId={userId} attributes={attributes}>
+      <Feature id={id} userId={userId} attributes={attributes}>
         {isEnabled => isEnabled && <div data-testid="feature" />}
       </Feature>
     ));
@@ -49,7 +48,7 @@ describe('Experiment', () => {
     isFeatureEnabled.mockReturnValueOnce(false);
 
     const { queryByTestId } = setup((
-      <Feature featureId={id} userId={userId} attributes={attributes}>
+      <Feature id={id} userId={userId} attributes={attributes}>
         {isEnabled => isEnabled && <div data-testid="feature" />}
       </Feature>
     ));

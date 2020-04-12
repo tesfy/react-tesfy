@@ -1,5 +1,5 @@
 import React from 'react';
-import { TestfyProvider, Experiment, Variation } from '../src';
+import { Experiment, Variation } from '../src';
 
 export default {
   title: 'Experiment',

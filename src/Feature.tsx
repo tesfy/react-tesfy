@@ -2,14 +2,14 @@ import React, { FC } from 'react';
 import useFeature from './useFeature';
 
 interface Props {
-  featureId: string;
+  id: string;
   userId?: string;
   attributes?: Record<string, any>;
   children(isFeatureEnabled: boolean): React.ReactNode;
 }
 
-const Experiment: FC<Props> = ({ featureId, userId, attributes, children }) => {
-  const isFeatureEnabled = useFeature({featureId, userId, attributes });
+const Experiment: FC<Props> = ({ id, userId, attributes, children }) => {
+  const isFeatureEnabled = useFeature({ id, userId, attributes });
 
   return (
     <>
