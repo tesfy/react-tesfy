@@ -1,11 +1,9 @@
 import React, { useMemo, useState } from 'react';
-import Testfy from 'testfy';
-import { Datafile } from 'testfy/dist/types/Config';
-import Storage from 'testfy/dist/types/Storage';
+import { Engine, Datafile, Storage } from 'testfy';
 import TestfyContext from './TestfyContext';
 
 interface Props {
-  datafile: Datafile;
+  datafile?: Datafile;
   storage?: Storage<string>;
   userId?: string;
   attributes?: Record<string, any>;
@@ -13,7 +11,7 @@ interface Props {
 };
 
 const TestfyProvider = ({
-  datafile,
+  datafile = {},
   storage,
   userId: userIdProp,
   attributes: attributesProp,
@@ -23,10 +21,10 @@ const TestfyProvider = ({
   const [attributes, setAttributes] = useState(attributesProp);
 
   const value = useMemo(() => {
-    const testfy = new Testfy(datafile, storage, userId, attributes);
+    const engine = new Engine(datafile, storage, userId, attributes);
 
     return {
-      instance: testfy,
+      engine,
       setUserId,
       setAttributes
     };

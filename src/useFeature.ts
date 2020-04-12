@@ -7,9 +7,9 @@ interface Props {
 }
 
 const useFeature = ({ featureId, userId, attributes }: Props) => {
-  const { instance: testfy } = useTestfy();
+  const { engine } = useTestfy();
 
-  return testfy?.isFeatureEnabled(featureId, userId, attributes);
+  return engine?.isFeatureEnabled(featureId, userId, attributes);
 };
 
 export default useFeature;

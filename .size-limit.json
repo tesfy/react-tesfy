@@ -1,0 +1,10 @@
+[
+  {
+    "path": "dist/react-testfy.cjs.production.min.js",
+    "limit": "8 KB"
+  },
+  {
+    "path": "dist/react-testfy.esm.js",
+    "limit": "8 KB"
+  }
+]

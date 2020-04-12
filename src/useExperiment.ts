@@ -7,9 +7,9 @@ interface Props {
 }
 
 const useExperiment = ({ id, userId, attributes }: Props) => {
-  const { instance: testfy } = useTestfy();
+  const { engine } = useTestfy();
 
-  return testfy?.getVariationId(id, userId, attributes);
+  return engine?.getVariationId(id, userId, attributes);
 };
 
 export default useExperiment;

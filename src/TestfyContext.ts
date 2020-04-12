@@ -1,10 +1,10 @@
 // @flow
 
 import { createContext } from 'react';
-import Testfy from 'testfy';
+import { Engine } from 'testfy';
 
 export interface Context {
-  instance?: Testfy,
+  engine?: Engine,
   userId?: string,
   attributes?: Record<string, any>
 };
