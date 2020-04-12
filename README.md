@@ -11,7 +11,7 @@
   <img alt="tests status" src="https://github.com/andresz1/testfy/workflows/main/badge.svg">
 </p>
 
-Testfy provides a simple but complete solution to develop A/B Tests and Feature Flags on both server and client side without relying in any storage layer. The main features of this library are:
+[Testfy](https://github.com/andresz1/testfy) provides a simple but complete solution to develop A/B Tests and Feature Flags on both server and client side without relying in any storage layer. The main features of this library are:
 - Lightweight and focused on performance
 - Experiments
 - Feature Flags
@@ -77,6 +77,16 @@ const App = () => (
 ### Experiments
 Check which variation of an experiment is assigned to a user.
 
+#### Hook
+```jsx
+import { useExperiment } from 'react-testfy';
+
+const Test = () => {
+  const variationId = useExperiment({ id: 'experiment-1' }); // '1'
+};
+```
+
+#### Component
 ```jsx
 import { Experiment, Variation } from 'react-testfy';
 
@@ -98,6 +108,16 @@ const Test = () => (
 ### Feature Flags
 Check if a feature is enabled for a user.
 
+#### Hook
+```jsx
+import { useFeature } from 'react-testfy';
+
+const Test = () => {
+  const isEnabled = useFeature({ id: 'feature-1' }); // true
+};
+```
+
+#### Component
 ```jsx
 import { Feature } from 'react-testfy';
 
@@ -111,6 +131,19 @@ const Test = () => (
 ### Audiences
 Use attributes to target an specific audience.
 
+
+#### Hook
+```jsx
+import { useExperiment } from 'react-testfy';
+
+const Test = () => {
+  const id = 'experiment-2';
+  const variationId1 = useExperiment({ id, attributes: { countryCode: 've' } }); // null
+  const variationId2 = useExperiment({ id, attributes: { countryCode: 'us' } }); // '0'
+};
+```
+
+#### Component
 ```jsx
 const Test = () => (
   <Fragment>
