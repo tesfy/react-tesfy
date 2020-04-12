@@ -77,20 +77,15 @@ const App = () => (
 ### Experiments
 Check which variation of an experiment is assigned to a user.
 
-#### Hook
-```jsx
-import { useExperiment } from 'react-testfy';
-
-const Test = () => {
-  const variationId = useExperiment({ id: 'experiment-1' }); // '1'
-};
-```
-
 #### Component
 ```jsx
-import { Experiment, Variation } from 'react-testfy';
+import { useExperiment, Experiment, Variation } from 'react-testfy';
 
-const Test = () => (
+const Hook = () => {
+  const variationId = useExperiment({ id: 'experiment-1' }); // '1'
+};
+
+const Simple = () => (
   <Experiment id="experiment-1">
     <Variation>
       Not rendered
@@ -108,20 +103,14 @@ const Test = () => (
 ### Feature Flags
 Check if a feature is enabled for a user.
 
-#### Hook
-```jsx
-import { useFeature } from 'react-testfy';
-
-const Test = () => {
-  const isEnabled = useFeature({ id: 'feature-1' }); // true
-};
-```
-
-#### Component
 ```jsx
 import { Feature } from 'react-testfy';
 
-const Test = () => (
+const Hook = () => {
+  const isEnabled = useFeature({ id: 'feature-1' }); // true
+};
+
+const Simple = () => (
   <Feature id="feature-1">
     {isEnabled => isEnabled ? 'enabled' : 'disabled'}
   </Feature>
@@ -131,21 +120,16 @@ const Test = () => (
 ### Audiences
 Use attributes to target an specific audience.
 
-
-#### Hook
 ```jsx
-import { useExperiment } from 'react-testfy';
+import { useExperiment, Experiment, Variation } from 'react-testfy';
 
-const Test = () => {
+const Hook = () => {
   const id = 'experiment-2';
   const variationId1 = useExperiment({ id, attributes: { countryCode: 've' } }); // null
   const variationId2 = useExperiment({ id, attributes: { countryCode: 'us' } }); // '0'
 };
-```
 
-#### Component
-```jsx
-const Test = () => (
+const Simple = () => (
   <Fragment>
     <Experiment id="experiment-2" attributes={{ countryCode: 've' }}>
       <Variation>
