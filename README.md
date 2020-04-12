@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A lightweight A/B Testing and Feature Flag JavaScript library focused on performance ⚡️
+  A lightweight A/B Testing and Feature Flag React library focused on performance ⚡️
 </p>
 
 <p align="center">
