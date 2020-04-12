@@ -77,7 +77,6 @@ const App = () => (
 ### Experiments
 Check which variation of an experiment is assigned to a user.
 
-#### Component
 ```jsx
 import { useExperiment, Experiment, Variation } from 'react-testfy';
 
