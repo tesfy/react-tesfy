@@ -8,7 +8,7 @@ interface Props {
   userId?: string;
   attributes?: Record<string, any>;
   children: React.ReactNode;
-};
+}
 
 const TestfyProvider = ({
   datafile = {},
@@ -30,11 +30,7 @@ const TestfyProvider = ({
     };
   }, [datafile, storage, userId, attributes]);
 
-  return (
-    <TestfyContext.Provider value={value}>
-      {children}
-    </TestfyContext.Provider>
-  )
+  return <TestfyContext.Provider value={value}>{children}</TestfyContext.Provider>;
 };
 
 export default TestfyProvider;

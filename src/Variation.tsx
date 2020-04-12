@@ -1,4 +1,4 @@
-import React, { Fragment, FC } from 'react';
+import React, { Fragment, FC } from 'react';
 
 interface Props {
   id?: string;
@@ -8,11 +8,7 @@ interface Props {
 const Variation: FC<Props> = ({ id = null, variationId, children }) => {
   const isActive = id === variationId;
 
-  return (
-    <Fragment>
-      {isActive && children}
-    </Fragment>
-  );
+  return <Fragment>{isActive && children}</Fragment>;
 };
 
 export default Variation;

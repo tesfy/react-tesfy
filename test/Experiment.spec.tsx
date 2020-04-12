@@ -17,11 +17,7 @@ beforeEach(() => {
 });
 
 const setup = (children: ReactNode) => {
-  return render(
-    <TestfyProvider>
-      {children}
-    </TestfyProvider >
-  );
+  return render(<TestfyProvider>{children}</TestfyProvider>);
 };
 
 describe('Experiment', () => {
@@ -30,7 +26,7 @@ describe('Experiment', () => {
     const userId = '676380e0-7793-44d6-9189-eb5868e17a86';
     getVariationId.mockReturnValueOnce('1');
 
-    const { getByTestId } = setup((
+    const { getByTestId } = setup(
       <Experiment id={id} userId={userId}>
         <Variation>
           <div />
@@ -42,7 +38,7 @@ describe('Experiment', () => {
           <div data-testid="variation" />
         </Variation>
       </Experiment>
-    ));
+    );
 
     expect(getVariationId).toHaveBeenCalledWith(id, userId, undefined);
     expect(getByTestId('variation')).toBeDefined();
@@ -53,7 +49,7 @@ describe('Experiment', () => {
     const userId = '676380e0-7793-44d6-9189-eb5868e17a86';
     getVariationId.mockReturnValueOnce(null);
 
-    const { getByTestId } = setup((
+    const { getByTestId } = setup(
       <Experiment id={id} userId={userId}>
         <Variation>
           <div data-testid="control" />
@@ -62,7 +58,7 @@ describe('Experiment', () => {
           <div />
         </Variation>
       </Experiment>
-    ));
+    );
 
     expect(getVariationId).toHaveBeenCalledWith(id, userId, undefined);
     expect(getByTestId('control')).toBeDefined();

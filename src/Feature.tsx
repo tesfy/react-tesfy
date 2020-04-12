@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { Fragment, FC } from 'react';
 import useFeature from './useFeature';
 
 interface Props {
@@ -11,11 +11,7 @@ interface Props {
 const Experiment: FC<Props> = ({ id, userId, attributes, children }) => {
   const isFeatureEnabled = useFeature({ id, userId, attributes });
 
-  return (
-    <>
-      {children(!!isFeatureEnabled)}
-    </>
-  );
+  return <Fragment>{children(!!isFeatureEnabled)}</Fragment>;
 };
 
 export default Experiment;

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { TestfyProvider, Feature } from '../src';
 
@@ -17,11 +17,7 @@ beforeEach(() => {
 });
 
 const setup = (children: ReactNode) => {
-  return render(
-    <TestfyProvider>
-      {children}
-    </TestfyProvider >
-  );
+  return render(<TestfyProvider>{children}</TestfyProvider>);
 };
 
 describe('Experiment', () => {
@@ -31,11 +27,11 @@ describe('Experiment', () => {
     const attributes = {};
     isFeatureEnabled.mockReturnValueOnce(true);
 
-    const { getByTestId } = setup((
+    const { getByTestId } = setup(
       <Feature id={id} userId={userId} attributes={attributes}>
         {isEnabled => isEnabled && <div data-testid="feature" />}
       </Feature>
-    ));
+    );
 
     expect(isFeatureEnabled).toHaveBeenCalledWith(id, userId, attributes);
     expect(getByTestId('feature')).toBeDefined();
@@ -47,11 +43,11 @@ describe('Experiment', () => {
     const attributes = {};
     isFeatureEnabled.mockReturnValueOnce(false);
 
-    const { queryByTestId } = setup((
+    const { queryByTestId } = setup(
       <Feature id={id} userId={userId} attributes={attributes}>
         {isEnabled => isEnabled && <div data-testid="feature" />}
       </Feature>
-    ));
+    );
 
     expect(isFeatureEnabled).toHaveBeenCalledWith(id, userId, attributes);
     expect(queryByTestId('feature')).toBeNull();

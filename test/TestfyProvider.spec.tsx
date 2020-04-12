@@ -16,7 +16,7 @@ describe('TestfyProvider', () => {
     render(
       <TestfyProvider datafile={datafile} userId={userId} attributes={attributes}>
         {null}
-      </TestfyProvider >
+      </TestfyProvider>
     );
 
     expect(Engine).toHaveBeenCalledWith(datafile, undefined, userId, attributes);

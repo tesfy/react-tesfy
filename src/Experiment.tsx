@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { Fragment, FC } from 'react';
 import useExperiment from './useExperiment';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Experiment: FC<Props> = ({ id, userId, attributes, children }) => {
-  const variationId = useExperiment({ id, userId, attributes });
+  const variationId = useExperiment({ id, userId, attributes });
 
   const variations = React.Children.map(children, child => {
     if (!React.isValidElement(child)) {
@@ -17,14 +17,10 @@ const Experiment: FC<Props> = ({ id, userId, attributes, children }) => {
 
     return React.cloneElement(child, {
       variationId
-    })
+    });
   });
 
-  return (
-    <>
-      {variations}
-    </>
-  );
+  return <Fragment>{variations}</Fragment>;
 };
 
 export default Experiment;

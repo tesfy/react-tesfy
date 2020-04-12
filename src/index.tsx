@@ -6,12 +6,4 @@ import Experiment from './Experiment';
 import Variation from './Variation';
 import Feature from './Feature';
 
-export {
-  useTestfy,
-  useExperiment,
-  useFeature,
-  TestfyProvider,
-  Experiment,
-  Variation,
-  Feature
-};
+export { useTestfy, useExperiment, useFeature, TestfyProvider, Experiment, Variation, Feature };
