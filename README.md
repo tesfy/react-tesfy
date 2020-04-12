@@ -28,7 +28,7 @@ npm install react-testfy --save
 ```
 
 ### Initialization
-Import and instantiate it with a datafile. A datafile is a `json` that defines the experiments and features avaliable. Ideally this file should be hosted somewhere outside your application (for example in [S3](https://aws.amazon.com/s3/)), so it could be fetched during boostrap or every certain time. This will allow you to make changes to the file without deploying the application.
+Render the provider with a datafile. A datafile is a `json` that defines the experiments and features avaliable. Ideally this file should be hosted somewhere outside your application (for example in [S3](https://aws.amazon.com/s3/)), so it could be fetched during boostrap or every certain time. This will allow you to make changes to the file without deploying the application.
 
 ```jsx
 import { TestfyProvider } from 'react-testfy';
@@ -113,7 +113,7 @@ Use attributes to target an specific audience.
 
 ```jsx
 const Test = () => (
-  <>
+  <Fragment>
     <Experiment id="experiment-2" attributes={{ countryCode: 've' }}>
       <Variation>
         Rendered
@@ -131,7 +131,7 @@ const Test = () => (
         Rendered
       </Variation>
     </Experiment>
-  </>
+  </Fragment>
 );
 ```
 
