@@ -1,7 +1,7 @@
 // @flow
 
 import { createContext } from 'react';
-import { Engine } from 'testfy';
+import { Engine } from 'tesfy';
 
 export interface Context {
   engine?: Engine;
@@ -9,6 +9,6 @@ export interface Context {
   attributes?: Record<string, any>;
 }
 
-const TestfyContext = createContext<Context>({});
+const TesfyContext = createContext<Context>({});
 
-export default TestfyContext;
+export default TesfyContext;

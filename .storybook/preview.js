@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import { addDecorator } from '@storybook/react';
-import { TestfyProvider } from '../src';
+import { TesfyProvider } from '../src';
 import datafile from '../stories/fixtures/datafile.json';
 
 addDecorator(story => (
-  <TestfyProvider datafile={datafile}>
+  <TesfyProvider datafile={datafile}>
     {story()}
-  </TestfyProvider >
+  </TesfyProvider >
 ));

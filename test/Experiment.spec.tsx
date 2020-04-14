@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
-import { TestfyProvider, Experiment, Variation } from '../src';
+import { TesfyProvider, Experiment, Variation } from '../src';
 
 const getVariationId = jest.fn();
 
-jest.mock('testfy', () => ({
+jest.mock('tesfy', () => ({
   Engine: jest.fn(() => {
     return {
       getVariationId
@@ -17,7 +17,7 @@ beforeEach(() => {
 });
 
 const setup = (children: ReactNode) => {
-  return render(<TestfyProvider>{children}</TestfyProvider>);
+  return render(<TesfyProvider>{children}</TesfyProvider>);
 };
 
 describe('Experiment', () => {

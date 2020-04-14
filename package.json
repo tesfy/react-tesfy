@@ -1,5 +1,5 @@
 {
-  "name": "react-testfy",
+  "name": "react-tesfy",
   "version": "1.0.0",
   "author": "Andres Alvarez <a.alvarez.sor@gmail.com>",
   "description": "A lightweight A/B Testing and Feature Flag React library focused on performance",
@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/react-testfy.esm.js",
+  "module": "dist/react-tesfy.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -69,6 +69,6 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "testfy": "^1.1.0"
+    "tesfy": "^1.0.0"
   }
 }

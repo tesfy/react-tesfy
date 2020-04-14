@@ -8,11 +8,11 @@
 
 <p align="center">
   <img alt="license badge" src="https://img.shields.io/badge/license-MIT-blue.svg">
-  <img alt="tests badge" src="https://github.com/andresz1/testfy/workflows/main/badge.svg">
-  <img alt="size badge" src="https://badgen.net/bundlephobia/minzip/react-testfy">
+  <img alt="tests badge" src="https://github.com/andresz1/tesfy/workflows/main/badge.svg">
+  <img alt="size badge" src="https://badgen.net/bundlephobia/minzip/react-tesfy">
 </p>
 
-[Testfy](https://github.com/andresz1/testfy) provides a simple but complete solution to develop A/B Tests and Feature Flags on both server and client side without relying in any storage layer. The main features of this library are:
+[Tesfy](https://github.com/andresz1/tesfy) provides a simple but complete solution to develop A/B Tests and Feature Flags on both server and client side without relying in any storage layer. The main features of this library are:
 - Lightweight and focused on performance
 - Experiments
 - Feature Flags
@@ -25,14 +25,14 @@
 
 ### Installation
 ```ts
-npm install react-testfy --save
+npm install react-tesfy --save
 ```
 
 ### Initialization
 Render the provider with a datafile. A datafile is a `json` that defines the experiments and features avaliable. Ideally this file should be hosted somewhere outside your application (for example in [S3](https://aws.amazon.com/s3/)), so it could be fetched during boostrap or every certain time. This will allow you to make changes to the file without deploying the application.
 
 ```jsx
-import { TestfyProvider } from 'react-testfy';
+import { TesfyProvider } from 'react-tesfy';
 
 const datafile = {
   experiments: {
@@ -69,9 +69,9 @@ const datafile = {
 const userId = '676380e0-7793-44d6-9189-eb5868e17a86';
 
 const App = () => (
-  <TestfyProvider datafile={datafile} userId={userId}>
+  <TesfyProvider  datafile={datafile} userId={userId}>
     {children}
-  </TestfyProvider>
+  </TesfyProvider >
 );
 ```
 
@@ -79,7 +79,7 @@ const App = () => (
 Check which variation of an experiment is assigned to a user.
 
 ```jsx
-import { useExperiment, Experiment, Variation } from 'react-testfy';
+import { useExperiment, Experiment, Variation } from 'react-tesfy';
 
 const Hook = () => {
   const variationId = useExperiment({ id: 'experiment-1' }); // '1'
@@ -104,7 +104,7 @@ const Simple = () => (
 Check if a feature is enabled for a user.
 
 ```jsx
-import { Feature } from 'react-testfy';
+import { Feature } from 'react-tesfy';
 
 const Hook = () => {
   const isEnabled = useFeature({ id: 'feature-1' }); // true
@@ -121,7 +121,7 @@ const Simple = () => (
 Use attributes to target an specific audience.
 
 ```jsx
-import { useExperiment, Experiment, Variation } from 'react-testfy';
+import { useExperiment, Experiment, Variation } from 'react-tesfy';
 
 const Hook = () => {
   const id = 'experiment-2';

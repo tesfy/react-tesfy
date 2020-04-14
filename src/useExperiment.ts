@@ -1,4 +1,4 @@
-import useTestfy from './useTestfy';
+import useTesfy from './useTesfy';
 
 interface Props {
   id: string;
@@ -7,7 +7,7 @@ interface Props {
 }
 
 const useExperiment = ({ id, userId, attributes }: Props) => {
-  const { engine } = useTestfy();
+  const { engine } = useTesfy();
 
   return engine?.getVariationId(id, userId, attributes);
 };

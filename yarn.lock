@@ -12168,6 +12168,14 @@ terser@^4.1.2, terser@^4.4.3, terser@^4.6.2, terser@^4.6.3:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
+tesfy@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/tesfy/-/tesfy-1.0.0.tgz#ac300c38930deb9a690837864d7956808e0dc60b"
+  integrity sha512-koxBAEkJMJvBr+Bx2OnLi02uZz/NFztGOWxOZXrXok4iKHEHV+tCrdPkXM0y90gA/B/sB49hDmIEturSvqu7HA==
+  dependencies:
+    json-logic-js "^1.2.2"
+    murmurhash "^0.0.2"
+
 test-exclude@^5.2.3:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/test-exclude/-/test-exclude-5.2.3.tgz#c3d3e1e311eb7ee405e092dac10aefd09091eac0"
@@ -12177,14 +12185,6 @@ test-exclude@^5.2.3:
     minimatch "^3.0.4"
     read-pkg-up "^4.0.0"
     require-main-filename "^2.0.0"
-
-testfy@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/testfy/-/testfy-1.1.0.tgz#71293da6c6d25532bcfc598f65a1e396b71c0ad6"
-  integrity sha512-Ta+GcibO9YQIiME2lGH/Djw7ugjmtrZADlvoMNXuypw3kTtTH6sK5vl1R0PuayX5d/Rp1mBTNP//+Bzlf0xfUQ==
-  dependencies:
-    json-logic-js "^1.2.2"
-    murmurhash "^0.0.2"
 
 text-table@0.2.0, text-table@^0.2.0:
   version "0.2.0"

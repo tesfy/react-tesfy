@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { Engine, Datafile, Storage } from 'testfy';
-import TestfyContext from './TestfyContext';
+import { Engine, Datafile, Storage } from 'tesfy';
+import TesfyContext from './TesfyContext';
 
 interface Props {
   datafile?: Datafile;
@@ -10,7 +10,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const TestfyProvider = ({
+const TesfyProvider = ({
   datafile = {},
   storage,
   userId: userIdProp,
@@ -30,7 +30,7 @@ const TestfyProvider = ({
     };
   }, [datafile, storage, userId, attributes]);
 
-  return <TestfyContext.Provider value={value}>{children}</TestfyContext.Provider>;
+  return <TesfyContext.Provider value={value}>{children}</TesfyContext.Provider>;
 };
 
-export default TestfyProvider;
+export default TesfyProvider;

@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
-import { TestfyProvider, Feature } from '../src';
+import { TesfyProvider, Feature } from '../src';
 
 const isFeatureEnabled = jest.fn();
 
-jest.mock('testfy', () => ({
+jest.mock('tesfy', () => ({
   Engine: jest.fn(() => {
     return {
       isFeatureEnabled
@@ -17,7 +17,7 @@ beforeEach(() => {
 });
 
 const setup = (children: ReactNode) => {
-  return render(<TestfyProvider>{children}</TestfyProvider>);
+  return render(<TesfyProvider>{children}</TesfyProvider>);
 };
 
 describe('Experiment', () => {

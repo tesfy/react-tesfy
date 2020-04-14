@@ -1,9 +1,9 @@
-import useTestfy from './useTestfy';
+import useTesfy from './useTesfy';
 import useExperiment from './useExperiment';
 import useFeature from './useFeature';
-import TestfyProvider from './TestfyProvider';
+import TesfyProvider from './TesfyProvider';
 import Experiment from './Experiment';
 import Variation from './Variation';
 import Feature from './Feature';
 
-export { useTestfy, useExperiment, useFeature, TestfyProvider, Experiment, Variation, Feature };
+export { useTesfy, useExperiment, useFeature, TesfyProvider, Experiment, Variation, Feature };
