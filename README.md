@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="logo" src="https://tesfy.s3.us-west-2.amazonaws.com/images/react_logo.png" width="280">
+  <img alt="logo" src="https://tesfy.s3.us-west-2.amazonaws.com/images/react_logo.png" width="240">
 </p>
 
 <p align="center">
