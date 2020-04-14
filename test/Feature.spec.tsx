@@ -20,7 +20,7 @@ const setup = (children: ReactNode) => {
   return render(<TesfyProvider>{children}</TesfyProvider>);
 };
 
-describe('Experiment', () => {
+describe('Feature', () => {
   it('renders enabled feature', () => {
     const id = 'feature-1';
     const userId = '676380e0-7793-44d6-9189-eb5868e17a86';
