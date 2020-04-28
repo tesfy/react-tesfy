@@ -71,7 +71,7 @@ const userId = '676380e0-7793-44d6-9189-eb5868e17a86';
 const App = () => (
   <TesfyProvider datafile={datafile} userId={userId}>
     {children}
-  </TesfyProvider >
+  </TesfyProvider>
 );
 ```
 
