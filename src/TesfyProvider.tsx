@@ -21,7 +21,7 @@ const TesfyProvider = ({
   const [attributes, setAttributes] = useState(attributesProp);
 
   const value = useMemo(() => {
-    const engine = new Engine(datafile, storage, userId, attributes);
+    const engine = new Engine({ datafile, storage, userId, attributes });
 
     return {
       engine,

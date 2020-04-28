@@ -19,6 +19,6 @@ describe('TesfyProvider', () => {
       </TesfyProvider>
     );
 
-    expect(Engine).toHaveBeenCalledWith(datafile, undefined, userId, attributes);
+    expect(Engine).toHaveBeenCalledWith({ datafile, userId, attributes });
   });
 });
