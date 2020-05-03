@@ -15,19 +15,21 @@ const TesfyProvider = ({ engine, children }: Props) => {
   const [userId, setUserId] = useState(engine.getUserId());
   const [attributes, setAttributes] = useState(engine.getAttributes());
 
-  const handleUserIdChange = (userId: string) => {
-    engine.setUserId(userId);
-    setUserId(userId);
-  };
-
-  const handleAttributesChange = (attributes: Record<string, any>) => {
-    engine.setAttributes(attributes);
-    setAttributes(attributes);
-  };
-
   const value = useMemo(() => {
+    const handleUserIdChange = (userId: string) => {
+      engine.setUserId(userId);
+      setUserId(userId);
+    };
+
+    const handleAttributesChange = (attributes: Record<string, any>) => {
+      engine.setAttributes(attributes);
+      setAttributes(attributes);
+    };
+
     return {
       engine,
+      userId,
+      attributes,
       setUserId: handleUserIdChange,
       setAttributes: handleAttributesChange
     };
