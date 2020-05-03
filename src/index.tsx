@@ -6,4 +6,13 @@ import Experiment from './Experiment';
 import Variation from './Variation';
 import Feature from './Feature';
 
-export { createInstance, useTesfy, useExperiment, useFeature, TesfyProvider, Experiment, Variation, Feature };
+export {
+  createInstance,
+  useTesfy,
+  useExperiment,
+  useFeature,
+  TesfyProvider,
+  Experiment,
+  Variation,
+  Feature
+};

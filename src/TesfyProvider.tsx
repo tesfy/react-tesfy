@@ -11,22 +11,19 @@ export const createInstance = (props: ConstructorParameters<typeof Engine>[0]) =
   return new Engine(props);
 };
 
-const TesfyProvider = ({
-  engine,
-  children
-}: Props) => {
+const TesfyProvider = ({ engine, children }: Props) => {
   const [userId, setUserId] = useState(engine.getUserId());
   const [attributes, setAttributes] = useState(engine.getAttributes());
 
   const handleUserIdChange = (userId: string) => {
     engine.setUserId(userId);
     setUserId(userId);
-  }
+  };
 
   const handleAttributesChange = (attributes: Record<string, any>) => {
     engine.setAttributes(attributes);
     setAttributes(attributes);
-  }
+  };
 
   const value = useMemo(() => {
     return {
