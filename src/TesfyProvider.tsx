@@ -1,34 +1,40 @@
 import React, { useMemo, useState } from 'react';
-import { Engine, Datafile, Storage } from 'tesfy';
+import { Engine } from 'tesfy';
 import TesfyContext from './TesfyContext';
 
 interface Props {
-  datafile?: Datafile;
-  storage?: Storage<string>;
-  userId?: string;
-  attributes?: Record<string, any>;
+  engine: Engine;
   children: React.ReactNode;
 }
 
+export const createInstance = (props: ConstructorParameters<typeof Engine>[0]) => {
+  return new Engine(props);
+};
+
 const TesfyProvider = ({
-  datafile = {},
-  storage,
-  userId: userIdProp,
-  attributes: attributesProp,
+  engine,
   children
 }: Props) => {
-  const [userId, setUserId] = useState(userIdProp);
-  const [attributes, setAttributes] = useState(attributesProp);
+  const [userId, setUserId] = useState(engine.getUserId());
+  const [attributes, setAttributes] = useState(engine.getAttributes());
+
+  const handleUserIdChange = (userId: string) => {
+    engine.setUserId(userId);
+    setUserId(userId);
+  }
+
+  const handleAttributesChange = (attributes: Record<string, any>) => {
+    engine.setAttributes(attributes);
+    setAttributes(attributes);
+  }
 
   const value = useMemo(() => {
-    const engine = new Engine({ datafile, storage, userId, attributes });
-
     return {
       engine,
-      setUserId,
-      setAttributes
+      setUserId: handleUserIdChange,
+      setAttributes: handleAttributesChange
     };
-  }, [datafile, storage, userId, attributes]);
+  }, [engine, userId, attributes]);
 
   return <TesfyContext.Provider value={value}>{children}</TesfyContext.Provider>;
 };

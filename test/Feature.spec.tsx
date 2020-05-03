@@ -1,12 +1,14 @@
 import React, { ReactNode } from 'react';
 import { render } from '@testing-library/react';
-import { TesfyProvider, Feature } from '../src';
+import { createInstance, TesfyProvider, Feature } from '../src';
 
 const isFeatureEnabled = jest.fn();
 
 jest.mock('tesfy', () => ({
   Engine: jest.fn(() => {
     return {
+      getUserId: jest.fn(),
+      getAttributes: jest.fn(),
       isFeatureEnabled
     };
   })
@@ -17,7 +19,9 @@ beforeEach(() => {
 });
 
 const setup = (children: ReactNode) => {
-  return render(<TesfyProvider>{children}</TesfyProvider>);
+  const engine = createInstance({ datafile: {} });
+
+  return render(<TesfyProvider engine={engine}>{children}</TesfyProvider>);
 };
 
 describe('Feature', () => {

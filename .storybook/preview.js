@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { addDecorator } from '@storybook/react';
-import { TesfyProvider } from '../src';
+import { createInstance, TesfyProvider } from '../src';
 import datafile from '../stories/fixtures/datafile.json';
 
+const engine = createInstance({ datafile });
+
 addDecorator(story => (
-  <TesfyProvider datafile={datafile}>
+  <TesfyProvider engine={engine}>
     {story()}
   </TesfyProvider >
 ));
