@@ -1,5 +1,3 @@
-// @flow
-
 import { createContext } from 'react';
 import { Engine } from 'tesfy';
 
