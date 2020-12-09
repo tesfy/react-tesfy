@@ -12168,10 +12168,10 @@ terser@^4.1.2, terser@^4.4.3, terser@^4.6.2, terser@^4.6.3:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-tesfy@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/tesfy/-/tesfy-1.1.1.tgz#f51cfd2c99925aa9ff5af77511a3729cc3722e9f"
-  integrity sha512-133N0UV/WiWlzlgiGsMe1QajPBrRHwsEk3/Q4IU9CZ066HfOBg8PWQxMA43KXz2sI2FM40p36Rhw+vUx3TikfA==
+tesfy@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/tesfy/-/tesfy-1.2.1.tgz#53b52c0f25fa35cb89b8098f4a8bfce6e2087716"
+  integrity sha512-r9tm2L6/+7IPpYZBkiVuMOLye24lZvQeFbTTHo+QtPr5CVHJGCo+H+nTj6wktAJ10Y+sVbGdMn/JNA1q6ICsCw==
   dependencies:
     json-logic-js "^1.2.2"
     murmurhash "^0.0.2"
