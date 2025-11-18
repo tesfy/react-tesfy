@@ -7941,9 +7941,9 @@ js-tokens@^3.0.2:
   integrity sha1-mGbfOVECEw449/mWvOtlRDIJwls=
 
 js-yaml@^3.13.1:
-  version "3.13.1"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
-  integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
+  version "3.14.2"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.2.tgz#77485ce1dd7f33c061fd1b16ecea23b55fcb04b0"
+  integrity sha512-PMSmkqxr106Xa156c2M265Z+FTrPl+oxd/rgOQy2tijQeK5TxQ43psO1ZCwhVOSdnn+RzkzlRz/eY4BgJBYVpg==
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -12168,10 +12168,10 @@ terser@^4.1.2, terser@^4.4.3, terser@^4.6.2, terser@^4.6.3:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-tesfy@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/tesfy/-/tesfy-1.1.1.tgz#f51cfd2c99925aa9ff5af77511a3729cc3722e9f"
-  integrity sha512-133N0UV/WiWlzlgiGsMe1QajPBrRHwsEk3/Q4IU9CZ066HfOBg8PWQxMA43KXz2sI2FM40p36Rhw+vUx3TikfA==
+tesfy@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/tesfy/-/tesfy-1.2.1.tgz#53b52c0f25fa35cb89b8098f4a8bfce6e2087716"
+  integrity sha512-r9tm2L6/+7IPpYZBkiVuMOLye24lZvQeFbTTHo+QtPr5CVHJGCo+H+nTj6wktAJ10Y+sVbGdMn/JNA1q6ICsCw==
   dependencies:
     json-logic-js "^1.2.2"
     murmurhash "^0.0.2"
